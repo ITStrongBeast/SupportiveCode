@@ -2,7 +2,7 @@ import java.util.function.BiFunction;
 
 public class BinSearch {
 
-    private int binSearch(int[] a, int target, char mode, BiFunction<Integer, Integer, Boolean> f) {
+    private static int binSearch(int[] a, int target, char mode, BiFunction<Integer, Integer, Boolean> f) {
         int l = -1;
         int r = a.length;
         while (r > l + 1) {
@@ -21,19 +21,19 @@ public class BinSearch {
     // up - для массива отсортированного по возрастанию
     // down - для массива отсортированного по убыванию
 
-    public int leftSearchUp(int[] a, int target) {
+    public static int leftSearchUp(int[] a, int target) {
         return binSearch(a, target, 'l', (x, y) -> x > y);
     }
 
-    public int rightSearchUp(int[] a, int target) {
+    public static int rightSearchUp(int[] a, int target) {
         return binSearch(a, target, 'r', (x, y) -> x >= y);
     }
 
-    public int leftSearchDown(int[] a, int target) {
+    public static int leftSearchDown(int[] a, int target) {
         return binSearch(a, target, 'l', (x, y) -> x < y);
     }
 
-    public int rightSearchDown(int[] a, int target) {
+    public static int rightSearchDown(int[] a, int target) {
         return binSearch(a, target, 'r', (x, y) -> x <= y);
     }
 }
